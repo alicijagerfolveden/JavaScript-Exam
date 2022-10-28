@@ -11,4 +11,14 @@ Pastaba: Sukurta kortelė, kurioje yra pateikiama vartotojo informacija, turi
 turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'https://api.github.com/users';
+const ENDPOINT = "https://api.github.com/users";
+
+const getUsers = async () => {
+  const response = await fetch("https://api.github.com/users");
+
+  const users = await response.json();
+
+  console.log(users);
+};
+
+getUsers();
