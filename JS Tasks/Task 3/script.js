@@ -13,12 +13,45 @@ turėti bent minimalų stilių ir būti responsive;
 
 const ENDPOINT = "https://api.github.com/users";
 
+const showUsersButton = document.querySelector("#btn");
+
 const getUsers = async () => {
-  const response = await fetch("https://api.github.com/users");
+  const response = await fetch(ENDPOINT);
 
   const users = await response.json();
 
-  console.log(users);
+  displayUsers(users);
 };
 
-getUsers();
+const displayUsers = (users) => {
+  const elementForUsers = document.querySelector("#output");
+
+  const messageElement = document.querySelector("#message");
+
+  messageElement.textContent = "";
+  messageElement.style.display = "none";
+
+  users.forEach((user) => {
+    const elementForUser = document.createElement("div");
+    const elementForLogin = document.createElement("p");
+    const elementForAvatar = document.createElement("img");
+
+    elementForUser.id = "userBox";
+
+    elementForLogin.textContent = user.login;
+
+    elementForAvatar.src = user.avatar_url;
+
+    elementForAvatar.alt = "User avatar";
+
+    elementForUser.append(elementForLogin, elementForAvatar);
+
+    elementForUsers.append(elementForUser);
+  });
+};
+
+showUsersButton.addEventListener("click", (event) => {
+  event.preventDefault();
+
+  getUsers();
+});

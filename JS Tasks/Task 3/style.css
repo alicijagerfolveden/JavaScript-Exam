@@ -59,3 +59,39 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+#output {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+}
+
+
+
+#userBox {
+margin: auto;
+padding-bottom: 30px;
+
+}
+
+#userBox img {
+width: 200px;
+border-radius: 50px;
+border: 5px solid black;
+
+}
+
+#userBox p {
+font-weight: bold;
+font-size: 1.5rem;
+text-align: center;
+padding-bottom: 2px;
+}
+
+@media screen and (max-width: 1172px) {
+  #output {
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+  
+
+}
