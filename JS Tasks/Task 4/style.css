@@ -7,6 +7,10 @@
     'Lucida Sans', Arial, sans-serif;
 }
 
+body {
+  background-color: rgb(223, 223, 223);
+}
+
 /* Mobile first */
 .wrapper {
   min-height: 100vh;
@@ -26,4 +30,23 @@
 .container h1 {
   margin-top: 50px;
   color: #333;
+}
+
+#car-brand-container {
+  border: 7px inset orange;
+margin: 20px;
+padding: 10px;
+background-color: antiquewhite;
+
+}
+
+#car-brand-name {
+  font-weight: bold;
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+#brand-models {
+  text-align: justify;
+  padding: 10px;
 }
