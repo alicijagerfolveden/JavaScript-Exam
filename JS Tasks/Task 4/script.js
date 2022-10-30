@@ -16,8 +16,6 @@ const getCars = async () => {
 
   const cars = await response.json();
 
-  console.log(cars);
-
   displayCars(cars);
 };
 
@@ -33,12 +31,20 @@ const displayCars = (cars) => {
     const carBrand = car.brand;
     const carModels = car.models;
 
+    carModels.forEach((carModel) => {
+      const carBrandModel = document.createElement("p");
+
+      carBrandModel.textContent = carModel;
+
+      carBrandModels.append(carBrandModel);
+    });
+
     carBrandContainer.id = "car-brand-container";
     carBrandName.id = "car-brand-name";
     carBrandModels.id = "brand-models";
 
     carBrandName.textContent = carBrand;
-    carBrandModels.textContent = carModels;
+    // carBrandModels.textContent = carModels;
 
     carBrandContainer.append(carBrandName, carBrandModels);
 

@@ -37,7 +37,7 @@ body {
 margin: 20px;
 padding: 10px;
 background-color: antiquewhite;
-
+width: 100%;
 }
 
 #car-brand-name {
@@ -49,4 +49,18 @@ background-color: antiquewhite;
 #brand-models {
   text-align: justify;
   padding: 10px;
+}
+
+#output {
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-gap: 20px;
+}
+
+@media screen and (max-width: 1105px) {
+  #output {
+  display: grid;
+  grid-template-columns: auto;
+  grid-gap: 20px;
+}
 }
